@@ -1,0 +1,61 @@
+
+{% extends 'bookstore/main.html' %}
+
+{% block  content %}
+
+<h1 class='p-5'>Profile</h1>
+<hr>
+<div class="container text-center p-5">
+  <div class="row">
+    <div class="col">
+      Name : {{request.user.username}}
+    </div>
+    <div class="col">
+      Totale Orders : {{t_order}}
+    </div>
+    <div class="col">
+      Pinding :{{p_order}}
+    </div>
+    <div class="col">
+      Deliverd : {{d_order}}
+    </div>
+    <div class="col">
+      in progress : {{in_order}}
+    </div>
+    <div class="col">
+      Out Of Order : {{out_order}}
+    </div>
+  </div>
+</div>
+<hr>
+
+<div class='container'>
+    <table class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col">Book</th>
+            <th scope="col">Category</th>
+            <th scope="col">Date</th>
+            <th scope="col">Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            {% for item  in orders  %}  <!-- for to return data from table   -->
+            <tr>
+            <td>{{item.book}}</td>
+            <td>{{item.book.category}}</td>
+            <td>{{item.date_create}}</td>
+            <td>{{item.status}}</td>
+            </tr>
+            {% endfor %}
+          </tr>
+
+        </tbody>
+      </table>
+</div>
+
+{% endblock  %}
+
+
+

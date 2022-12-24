@@ -1,0 +1,37 @@
+
+{% extends 'bookstore/main.html' %}
+
+{% block  content %}
+
+<h1 class = "p-5">books</h1>
+
+<div class = 'container'> 
+    <table class="table">
+        <thead>
+          <tr>
+        
+            <th scope="col">Name</th>
+            <th scope="col">Price</th>
+            <th scope="col">Author</th>
+          </tr>
+        </thead>
+        <tbody>
+          
+            {% for item  in books  %}  <!-- word books it is connecting between  -->
+            <tr>
+            <td>{{item.name}}</td>
+            <td>{{item.price}}</td>
+            <td>{{item.author}}</td>
+            </tr>
+            {% endfor %}
+          
+         
+        </tbody>
+      </table>
+</div>
+
+
+
+
+{% endblock  %}
+

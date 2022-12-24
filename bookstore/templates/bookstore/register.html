@@ -1,0 +1,32 @@
+
+
+<h1>register </h>
+
+
+    <form  action="" method="POST">
+        {% csrf_token %} <!-- this for alow us to send post  -->
+        {% comment %} {{form.as_p}} {% endcomment %}
+    
+        {{form.username.label}}
+        {{form.username}} <br>
+        
+        {{form.email.label}}
+        {{form.email}} <br>
+
+        {{form.password1.label}}
+        {{form.password1}} <br>
+
+        {{form.password2.label}}
+        {{form.password2}} <br>
+        <br>
+        <!--هذا الكود فقط لاضافة (recaptcha) الريكابجا-->
+        <script src="https://www.google.com/recaptcha/api.js"></script>
+        <div class="g-recaptcha" data-sitekey="6Lcmo5wjAAAAACGkoN0ePebKNMAvquhs2da3UXfb"></div>
+
+
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+        <br>
+        {{form.errors}}
+        <a href="{% url 'login' %}"> Login Page </a>
+      </form>

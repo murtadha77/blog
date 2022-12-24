@@ -1,0 +1,25 @@
+{% extends 'bookstore/main.html' %} 
+{% load  static %}
+{% block  content %}
+
+
+<div class="card">
+    <div class="card-body">
+
+        <form action="" method="POST">
+            {% csrf_token %}
+            {{formset.management_form}}
+            {% for item in formset %}
+            {{ item }}  <br>
+            {% endfor %}
+
+            <a href="{% url 'home' %}">cancle </a>
+            <button type="submit" class="btn btn-primary">Submet</button>
+
+          </form>
+        
+    </div>
+  </div>
+
+{% endblock  %}
+

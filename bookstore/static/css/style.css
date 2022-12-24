@@ -1,0 +1,5 @@
+
+.bg-primary {
+--bs-bg-opacity: 1;
+background-color: #ff0017 !important;
+}
